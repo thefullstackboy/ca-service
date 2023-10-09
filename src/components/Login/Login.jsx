@@ -1,5 +1,5 @@
 import React from 'react'
-import './All_STYLE/Login.css'
+import '../Login/Login.css'
 import { Link } from 'react-router-dom';
 
 function Login() {
@@ -12,13 +12,13 @@ function Login() {
           <div className="card-body p-5 text-center form-bg">
             <h3 className="mb-5 text-uppercase text-white">Sign in</h3>
             <div className="form-outline mb-4">
-              <input type="email" id="typeEmailX-2" className="form-control form-control-lg" placeholder='Type email' />           
+              <input type="email" id="typeEmailX-2" className="form-control form-control-lg" placeholder='Email' />           
             </div>
 
             <div className="form-outline mb-4">
-              <input type="password" id="typePasswordX-2" className="form-control form-control-lg" placeholder='Type password' />             
+              <input type="password" id="typePasswordX-2" className="form-control form-control-lg" placeholder='Password' />             
             </div>           
-            <button type="button" className="btn btn-light btn-lg">Login</button>
+            <button type="button" className="btn btn-light btn-lg">Sign in</button>
 
           </div>
           <Link to={'/forgot-password'} className='nav-link'>
