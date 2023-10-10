@@ -1,8 +1,9 @@
 import React from 'react'
-import '../Login/Login.css'
+import './SignIn.css'
 import { Link } from 'react-router-dom';
+import CONSTANTS from "../../main"
 
-function Login() {
+function SignIn() {
   return (
 <section className="" >
   <div className="container form-top">
@@ -21,7 +22,7 @@ function Login() {
             <button type="button" className="btn btn-light btn-lg">Sign in</button>
 
           </div>
-          <Link to={'/forgot-password'} className='nav-link'>
+          <Link to={CONSTANTS.URL.FORGOT_PASSWORD} className='nav-link'>
             <p className='text-center fs-4 mt-3'>Forgot password</p>
           </Link>
         </div>
@@ -32,4 +33,4 @@ function Login() {
   )
 }
 
-export default Login
+export default SignIn

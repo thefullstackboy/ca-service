@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "../SignUp/SignUp.css";
-import login from '../../main';
+import CONSTANTS from "../../main"
 
 export default function SignUp() {
   return (
@@ -32,8 +32,8 @@ export default function SignUp() {
             </div>        
             <button type="button" className="btn btn-light btn-lg">Signup</button>
           </div>
-          <Link to={login} className='nav-link'>
-            <p className='text-center fs-4 mt-3'>Alredy have password login</p>
+          <Link to={CONSTANTS.URL.SIGN_IN} className='nav-link'>
+            <p className='text-center fs-4 mt-3'>Already have password login</p>
           </Link>          
         </div>
       </div>
