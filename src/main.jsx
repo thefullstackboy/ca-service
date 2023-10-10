@@ -1,5 +1,3 @@
-// let login = "/log-in"
-// export default login;
 module.exports = {
     URL:{
         SIGN_IN:"/sign-in",
