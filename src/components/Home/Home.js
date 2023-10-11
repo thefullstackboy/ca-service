@@ -4,40 +4,12 @@ import "../Home/Home.css"
 function Home() {
   return (
     <div className='container mt-5'>
-      <div className='row'>
-        <div className='col-md-2 col-xl-2 col-lg-2 col-sm-12'>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-          <p>text text text text</p>
-
-        </div>
-        <div className='justify-content-center col-md-8 col-xl-8 col-lg-8 col-sm-12'>
+      <div className='row'>       
+        <div className='col-md-6 offset-md-3'>
         <div class="card mb-3 cardwidth">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN_Sp_aFk7FISfZRUl4jZ8FNn_9go0iqwsHA&usqp=CAU" class="img-fluid rounded-start imgesize" alt="..."/>
+      <img src="https://images.unsplash.com/photo-1696384036025-c7d7b7f6584d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded imgesize" alt="..."/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -58,7 +30,7 @@ function Home() {
 <div class="card mb-3 cardwidth">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN_Sp_aFk7FISfZRUl4jZ8FNn_9go0iqwsHA&usqp=CAU" class="img-fluid rounded-start imgesize" alt="..."/>
+    <img src="https://images.unsplash.com/photo-1696384036025-c7d7b7f6584d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded-start imgesize" alt="..."/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -79,7 +51,7 @@ function Home() {
 <div class="card mb-3 cardwidth">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN_Sp_aFk7FISfZRUl4jZ8FNn_9go0iqwsHA&usqp=CAU" class="img-fluid rounded-start imgesize" alt="..."/>
+    <img src="https://images.unsplash.com/photo-1696384036025-c7d7b7f6584d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded-start imgesize" alt="..."/>     
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -100,7 +72,7 @@ function Home() {
 <div class="card mb-3 cardwidth">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN_Sp_aFk7FISfZRUl4jZ8FNn_9go0iqwsHA&usqp=CAU" class="img-fluid rounded-start imgesize" alt="..."/>
+    <img src="https://images.unsplash.com/photo-1696384036025-c7d7b7f6584d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded-start imgesize" alt="..."/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
