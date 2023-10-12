@@ -25,9 +25,9 @@ export default function SignUp() {
             </div>    
 
             <div className="form-outline mb-4">
-            <label class="checkboxcontainer text-white fs-5">CA
+            <label className="checkboxcontainer text-white fs-5">CA
   <input type="checkbox"/>
-  <span class="checkmark"></span>
+  <span className="checkmark"></span>
 </label>         
             </div>        
             <button type="button" className="btn btn-light btn-lg">Signup</button>
