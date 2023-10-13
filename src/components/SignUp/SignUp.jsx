@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import "../SignUp/SignUp.css";
 import CONSTANTS from "../../main"
+import "../SignUp/SignUp.css";
 
 export default function SignUp() {
   return (

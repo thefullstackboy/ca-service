@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import SignIn from "./components/SignIn/SignIn"
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import SignUp from "./components/SignUp/SignUp";
-import Home from "./components/Home/Home";
+import Home2 from "./components/Home/Home2";
 import DetailsPage from "./components/DetailsPage/DetailsPage";
 import CONSTANTS from "./main"
 
@@ -17,7 +17,7 @@ function App() {
     <Route path={CONSTANTS.URL.SIGN_IN} element={<SignIn/>}/>
     <Route path={CONSTANTS.URL.FORGOT_PASSWORD} element={<ForgotPassword/>}/>
     <Route path={CONSTANTS.URL.SIGN_UP} element={<SignUp/>}/>
-    <Route path={CONSTANTS.URL.HOME} element={<Home/>}/>  
+    <Route path={CONSTANTS.URL.HOME} element={<Home2/>}/>  
     <Route path={CONSTANTS.URL.DETAILS_PAGE} element={<DetailsPage/>}/>   
     </Routes>
     </BrowserRouter> 
