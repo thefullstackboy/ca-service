@@ -1,5 +1,3 @@
-import { BASEURL } from "./configs/settings/config";
-
 module.exports = {
     URL:{
         HOME:"/",
@@ -9,10 +7,10 @@ module.exports = {
         DETAILS_PAGE:"/details-page"
     },
     APIURL: {
-        SIGN_IN: BASEURL + "/api/token/",
-        SIGN_UP: BASEURL + "/api/accounts/signup",
-        SERVICE_GET: BASEURL + "/api/services/<id>",
-        SERVICE_LIST: BASEURL + "/api/services/",
-        SERVICE_CREATE: BASEURL + "/api/services/create",
+        SIGN_IN: 'http://localhost:8000'.concat("/api/token/"),
+        SIGN_UP: 'http://localhost:8000'.concat("/api/accounts/signup"),
+        SERVICE_GET: 'http://localhost:8000'.concat("/api/services/<id>"),
+        SERVICE_LIST: 'http://localhost:8000'.concat("/api/services/"),
+        SERVICE_CREATE: 'http://localhost:8000'.concat("/api/services/create"),
     }
 }
