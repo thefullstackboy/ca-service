@@ -7,10 +7,10 @@ module.exports = {
         DETAILS_PAGE:"/details-page"
     },
     APIURL: {
-        SIGN_IN: 'http://localhost:8000'.concat("/api/token/"),
-        SIGN_UP: 'http://localhost:8000'.concat("/api/accounts/signup"),
-        SERVICE_GET: 'http://localhost:8000'.concat("/api/services/<id>"),
-        SERVICE_LIST: 'http://localhost:8000'.concat("/api/services/"),
-        SERVICE_CREATE: 'http://localhost:8000'.concat("/api/services/create"),
+        SIGN_IN: `process.env.BASEURL${"/api/token/"}`,
+        SIGN_UP: `process.env.BASEURL${"/api/accounts/signup"}`,
+        SERVICE_GET: `process.env.BASEURL${"/api/services/<id>"}`,
+        SERVICE_LIST: `process.env.BASEURL.${"/api/services/"}`,
+        SERVICE_CREATE: `process.env.BASEURL.${"/api/services/create"}`,
     }
 }
