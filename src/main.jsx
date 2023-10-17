@@ -1,3 +1,5 @@
+const { BASEURL } = require("./config")
+
 module.exports = {
     URL:{
         HOME:"/",
@@ -7,10 +9,10 @@ module.exports = {
         DETAILS_PAGE:"/details-page"
     },
     APIURL: {
-        SIGN_IN: `process.env.BASEURL${"/api/token/"}`,
-        SIGN_UP: `process.env.BASEURL${"/api/accounts/signup"}`,
-        SERVICE_GET: `process.env.BASEURL${"/api/services/<id>"}`,
-        SERVICE_LIST: `process.env.BASEURL.${"/api/services/"}`,
-        SERVICE_CREATE: `process.env.BASEURL.${"/api/services/create"}`,
+        SIGN_IN: BASEURL.concat("/api/token/"),
+        SIGN_UP: BASEURL.concat("/api/accounts/signup"),
+        SERVICE_GET: BASEURL.concat("/api/services/<id>"),
+        SERVICE_LIST: BASEURL.concat("/api/services/"),
+        SERVICE_CREATE: BASEURL.concat("/api/services/create"),
     }
 }
