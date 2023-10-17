@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp/SignUp";
 import Home2 from "./components/Home/Home2";
 import DetailsPage from "./components/DetailsPage/DetailsPage";
 import CONSTANTS from "./main"
+import CreateService from "./components/CreateService/CreateService";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     <Route path={CONSTANTS.URL.SIGN_UP} element={<SignUp/>}/>
     <Route path={CONSTANTS.URL.HOME} element={<Home2/>}/>  
     <Route path={CONSTANTS.URL.DETAILS_PAGE} element={<DetailsPage/>}/>   
+    <Route path={CONSTANTS.URL.CREATE_SERVICE} element={<CreateService/>}/>
     </Routes>
     </BrowserRouter> 
 
