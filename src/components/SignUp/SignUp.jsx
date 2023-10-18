@@ -16,7 +16,7 @@ try {
 if(data.password === data.confirmPassword){
   axios.post(CONSTANTS.APIURL.SIGN_UP,
     {
-      name:data.Name2,
+      name:data.Name,
       email: data.Email,          
       password:data.password,
       password2: data.confirmPassword,
@@ -27,7 +27,7 @@ if(data.password === data.confirmPassword){
         position: toast.POSITION.TOP_CENTER
       });
       console.log("respone status",response)             
-    }).catch((error) => { // error is handled in catch block
+    }).then((error) => { // error is handled in catch block
       console.log("error",error)
       if (error.response) { // status code out of the range of 2xx
         toast.error(error.response.data);           
@@ -56,14 +56,14 @@ if(data.password === data.confirmPassword){
                 <h3 className="mb-5 text-uppercase text-white">Sign Up</h3>
                 <form class="login-form" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-outline mb-4">
-                    <input type="text" id="typeEmailX-2" className="form-control form-control-lg" placeholder='Name'
-                      {...register("Name2", { required: true})}
+                    <input type="text"  className="form-control form-control-lg" placeholder='Name'
+                      {...register("Name", { required: true})}
                     />
-                    {errors.Name2 && <p className='text-white text-start'>* Please type your Name.</p>}
+                    {errors.Name && <p className='text-white text-start'>* Please type your Name.</p>}
                   </div>
 
                   <div className="form-outline mb-4">
-                    <input type="email" id="typeEmailX-2" className="form-control form-control-lg" placeholder='Email'
+                    <input type="email"  className="form-control form-control-lg" placeholder='Email'
                       {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
                     />
                     {errors.Email && <p className='text-white text-start'>* Please check the email id.</p>}
@@ -71,14 +71,14 @@ if(data.password === data.confirmPassword){
 
 
                   <div className="form-outline mb-4">
-                    <input type="password" id="typePasswordX-2" className="form-control form-control-lg" placeholder='Password' 
+                    <input type="password"  className="form-control form-control-lg" placeholder='Password' 
                      {...register("password",
                      {required: true,minLength:6})}  
                     />
                       {errors.password && <p className='text-white text-start'>* Password must be at least 6 characters</p>}
                   </div>
                   <div className="form-outline mb-4">
-                    <input type="password" id="typePasswordX-2" className="form-control form-control-lg" placeholder='Confirm Password' 
+                    <input type="password"  className="form-control form-control-lg" placeholder='Confirm Password' 
                      {...register("confirmPassword",
                      {required: true,minLength:6})} 
                     />
@@ -98,7 +98,7 @@ if(data.password === data.confirmPassword){
                 </form>
               </div>
               <Link to={CONSTANTS.URL.SIGN_IN} className='nav-link'>
-                <p className='text-center fs-4 mt-3'>Already have password login</p>
+                <p className='text-center fs-4 mt-3'>Already have the password please login</p>
               </Link>
             </div>
           </div>
