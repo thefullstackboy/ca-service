@@ -21,22 +21,16 @@ if(data.password === data.confirmPassword){
       password:data.password,
       password2: data.confirmPassword,
       is_ca:data.ifCa     
-    }).then((response)=>{
-      console.log(data)
-      toast.success('signup successfully', {
-        position: toast.POSITION.TOP_CENTER
-      });
-      console.log("respone status",response)             
-    }).then((error) => { // error is handled in catch block
-      console.log("error",error)
-      if (error.response) { // status code out of the range of 2xx
-        toast.error(error.response.data);           
-      } else if (error.request) { // The request was made but no response was received
-        console.log(error.request);
-      } else {// Error on setting up the request
-        console.log('Error', error.message);
-      }
-    });      
+    }).then((response)=>{   
+      if(response.data.success === "CA created successfully"){    
+        toast.success('signup successfully', {
+          position: toast.POSITION.TOP_CENTER
+        });
+      }       
+      if(response.data.error==="Email already exists"){
+        toast.error("Email already exists")
+      }         
+    })      
   } 
   else {
     toast.error("password and confirm password not match.")
