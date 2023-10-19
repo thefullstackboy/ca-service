@@ -23,17 +23,25 @@ if(data.password === data.confirmPassword){
       is_ca:data.ifCa     
     }).then((response)=>{   
       if(response.data.success === "CA created successfully"){    
-        toast.success('signup successfully', {
+        toast.success('CA Signup successfully', {
           position: toast.POSITION.TOP_CENTER
         });
-      }       
+      }
+      if(response.data.success === "User created successfully"){    
+        toast.success('User Signup successfully', {
+          position: toast.POSITION.TOP_CENTER
+        });
+      }        
       if(response.data.error==="Email already exists"){
-        toast.error("Email already exists")
+        toast.error("Email already exists",{
+          position: toast.POSITION.TOP_CENTER,
+          className: 'mt-5'
+        })
       }         
     })      
   } 
   else {
-    toast.error("password and confirm password not match.")
+    toast.error("Password and confirm password not match.")
   } 
 } catch (e) {
   console.log(e.response.message)
@@ -82,7 +90,7 @@ if(data.password === data.confirmPassword){
                   <div className="form-outline mb-4">
                     <label className="checkboxcontainer text-white fs-5">CA
                       <input type="checkbox" 
-                      {...register("ifCa", {required: false})}
+                      {...register("ifCa", {})}
                       />
                       <span className="checkmark"></span>
                     </label>                 

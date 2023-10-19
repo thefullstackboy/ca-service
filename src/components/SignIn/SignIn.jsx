@@ -20,10 +20,13 @@ function SignIn() {
         const data = await response.json();
         localStorage.setItem("refresh", data.refresh);
         localStorage.setItem("access", data.access);
-        toast.success("login successful");
+        toast.success("Login successful");
       } else {
         // Handle login error here
-        toast.error('email id and password not match');
+        toast.error('Email id and password not match',{
+          position: toast.POSITION.TOP_CENTER,
+          className: 'mt-5'
+        });
       }
     } catch (error) {
       console.error('Error occurred:', error);
@@ -47,7 +50,7 @@ function SignIn() {
                   </div>
 
                   <div className="form-outline mb-4">
-                    <input type="password" id="typePasswordX-2" className="form-control form-control-lg" placeholder='Password'
+                    <input type="password"  className="form-control form-control-lg" placeholder='Password'
                       {...register("password",
                         { required: true })}
                     />
