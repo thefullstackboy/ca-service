@@ -48,7 +48,7 @@ if(data.password === data.confirmPassword){
             <div className="card2">
               <div className="card-body p-5 text-center form-bg">
                 <h3 className="mb-5 text-uppercase text-white">Sign Up</h3>
-                <form class="login-form" onSubmit={handleSubmit(onSubmit)}>
+                <form  onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-outline mb-4">
                     <input type="text"  className="form-control form-control-lg" placeholder='Name'
                       {...register("Name", { required: true})}

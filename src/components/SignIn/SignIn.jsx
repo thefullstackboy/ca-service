@@ -1,42 +1,34 @@
-import React, {useState} from 'react'
-import './SignIn.css'
+import './SignIn.css';
 import { Link } from 'react-router-dom';
-import CONSTANTS from "../../main"
+import CONSTANTS from "../../main";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
 
 function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loginMessage, setLoginMessage] = useState('')
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch(CONSTANTS.APIURL.SIGN_IN, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: data.Email, password: data.password }),
+      });
 
-  const [data, setData] = useState(null);
-
-  function showLoginMessage(){
-    console.log(loginMessage)
-  }
-
-  function handleClick() {
-    let body = {
-      "email": email,
-      "password": password
-    }
-
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', CONSTANTS.APIURL.SIGN_IN);
-    xhr.setRequestHeader("Content-Type", "application/json")
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        setData(JSON.parse(xhr.responseText));
-        setLoginMessage("Login Successfull")
-        showLoginMessage()
-      } else if (xhr.status === 401){
-        setLoginMessage("Invalid email or password")
-        showLoginMessage()
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem("refresh", data.refresh);
+        localStorage.setItem("access", data.access);
+        toast.success("login successful");
+      } else {
+        // Handle login error here
+        toast.error('email id and password not match');
       }
-    };
-    xhr.send(JSON.stringify(body));
-  }
-
-
+    } catch (error) {
+      console.error('Error occurred:', error);
+    }
+  };
 
   return (
     <section className="" >
@@ -46,19 +38,29 @@ function SignIn() {
             <div className="card2">
               <div className="card-body p-5 text-center form-bg">
                 <h3 className="mb-5 text-uppercase text-white">Sign in</h3>
-                <div className="form-outline mb-4">
-                  <input type="email" id="typeEmailX-2" className="form-control form-control-lg" placeholder='Email' value={email} onChange={event => setEmail(event.target.value)} />           
-                </div>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <div className="form-outline mb-4">
+                    <input type="email" className="form-control form-control-lg" placeholder='Email'
+                      {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+                    />
+                    {errors.Email && <p className='text-white text-start'>* Please check the email id.</p>}
+                  </div>
 
-                <div className="form-outline mb-4">
-                  <input type="password" id="typePasswordX-2" className="form-control form-control-lg" placeholder='Password' value={password} onChange={event => setPassword(event.target.value)} />             
-                </div>           
-                <button onClick={handleClick} type="button" className="btn btn-light btn-lg">Sign in</button>
-
+                  <div className="form-outline mb-4">
+                    <input type="password" id="typePasswordX-2" className="form-control form-control-lg" placeholder='Password'
+                      {...register("password",
+                        { required: true })}
+                    />
+                    {errors.password && <p className='text-white text-start'>* This field may not be blank.</p>}
+                  </div>
+                  <button type="submit" className="btn btn-light btn-lg">Sign in</button>
+                  <ToastContainer />
+                </form>
               </div>
               <Link to={CONSTANTS.URL.FORGOT_PASSWORD} className='nav-link'>
                 <p className='text-center fs-4 mt-3'>Forgot password</p>
               </Link>
+
             </div>
           </div>
         </div>
