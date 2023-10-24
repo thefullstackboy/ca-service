@@ -39,10 +39,10 @@ input[type=number] {
 }
 
 .form-content .form-items { 
-    padding: 48px; 
+    padding: 25px 48px ; 
     width: 125%;
     min-width: 200px;
-    border-radius: 2%;  
+    border-radius: 21px;  
     background-color: #e43b3b;
 }
 
