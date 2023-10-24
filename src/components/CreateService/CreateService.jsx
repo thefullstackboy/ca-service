@@ -67,7 +67,7 @@ export default function CreateService() {
             steps_9:data.steps_9,
             saved_as:data.saved_as,
             star_rating:data.star_rating,            
-           },headers).then((response)=>{
+           },{"headers":headers}).then((response)=>{
                console.log(response)
             })}
              catch(error){           
