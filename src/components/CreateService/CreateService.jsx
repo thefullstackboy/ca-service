@@ -3,18 +3,27 @@ import "../CreateService/CreateService.css"
 import CONSTANTS from "../../main";
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function CreateService() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {    
         try {
-            const token = localStorage.getItem('access');
-            const headers = {
+            console.log("fromData%%%%%%%%%%%%",data)
+          
+            let token = localStorage.getItem('access');  
+            console.log("token###########",token)   
+          const headers ={
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                };  
-        const result = axios.post(CONSTANTS.APIURL.SERVICE_CREATE,{
+                } 
+                console.log(headers)          
+                
+            axios.post(CONSTANTS.APIURL.SERVICE_CREATE,                
+        {
             short_title:data.short_title,
             subtitle:data.subtitle,
             intro_photo:data.intro_photo,
@@ -57,13 +66,15 @@ export default function CreateService() {
             steps_8:data.steps_8,
             steps_9:data.steps_9,
             saved_as:data.saved_as,
-            star_rating:data.star_rating       
-           },{headers})  
-           console.log(result)
-         console.log(data)
-         console.log(data.intro_photo)
-          } catch(error){
-             console.log("error12",error)
+            star_rating:data.star_rating,            
+           },headers).then((response)=>{
+               console.log(response)
+            })}
+             catch(error){           
+             toast.error("Login requreid",{
+                position: toast.POSITION.TOP_CENTER,
+                className: 'mt-5'
+              })
           }
     }       
     return (
@@ -89,15 +100,19 @@ export default function CreateService() {
                                         {errors.subtitle && <p className='text-white text-start'>* Please type your subtitle.</p>}
                                     </div>
 
-                                    <div className="col-md-12">
+                                    {/* <div className="col-md-12">
                                         <label className="upload w-100 btn btn-dark btn-lg mt-3 bg-white text-dark">
                                             <input type="file" id="typeEmailX-2" className="form-control form-control-lg" 
                                             required
-                                               {...register("intro_photo")}         
+                                               {...register("intro_photo",{ required: false})}         
                                         />  
                                     Upload intro photo
                                         </label>
-                                    </div>
+                                    </div> */}
+
+                                    
+
+                                   
 
                                     <div className="col-md-12">
                                         <input className="form-control" type="number" placeholder="Price" 
@@ -106,14 +121,14 @@ export default function CreateService() {
                                          {errors.price && <p className='text-white text-start'>* Please type your price.</p>}
                                     </div>
 
-                                    <div className="col-md-12">
+                                    {/* <div className="col-md-12">
                                         <label className="upload w-100 btn btn-dark btn-lg mt-3 bg-white text-dark">
                                             <input type="file" id="typeEmailX-2" className="form-control form-control-lg" 
-                                             {...register("intro_video", { required: true})}
+                                             {...register("intro_video", { required: false})}
                                             />
                                            Upload intro video
                                         </label>
-                                    </div>
+                                    </div> */}
 
                                     <div className="col-md-12">
                                         <input className="form-control" type="text" placeholder="Title"  
@@ -377,14 +392,13 @@ export default function CreateService() {
                                          {...register("star_rating", { required: true})}
                                         />
                                          {errors.star_rating && <p className='text-white text-start'>* Please type star_rating.</p>}
-                                    </div> 
+                                    </div>
 
-                            
+                         
                                     <div className="form-button mt-3 text-center">
                                         <button id="submit" type="submit" className="btn btn-light">Create</button>
                                     </div>
-
-                                    
+                                    <ToastContainer />                                    
                                 </form>
                             </div>
                         </div>
