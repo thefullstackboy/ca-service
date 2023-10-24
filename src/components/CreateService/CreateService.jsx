@@ -1,12 +1,65 @@
 import React from 'react'
 import "../CreateService/CreateService.css"
+import CONSTANTS from "../../main";
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 export default function CreateService() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {    
-        try {   
+        try {
+            const token = localStorage.getItem('access');
+            const headers = {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+                };  
+        const result = axios.post(CONSTANTS.APIURL.SERVICE_CREATE,{
+            short_title:data.short_title,
+            subtitle:data.subtitle,
+            intro_photo:data.intro_photo,
+            price:data.price,
+            intro_video:data.intro_video,
+            title:data.title,
+            service_required_for:data.service_required_for,
+            description_1:data.description_1,
+            description_2:data.description_2,
+            description_3:data.description_3,
+            description_4:data.description_4,
+            description_5:data.description_5,
+            description_6:data.description_6,
+            description_7:data.description_7,
+            description_8:data.description_8,
+            service_include_1:data.description_1,
+            service_include_2:data.description_2,
+            service_include_3:data.description_3,
+            service_include_4:data.description_4,
+            service_include_5:data.description_5,
+            service_include_6:data.description_6,
+            service_include_7:data.description_7,
+            service_include_8:data.description_8,
+            document_required_1:data.description_1,
+            document_required_2:data.description_2,
+            document_required_3:data.description_3,
+            document_required_4:data.description_4,
+            document_required_5:data.description_5,
+            document_required_6:data.description_6,
+            document_required_7:data.description_7,
+            document_required_8:data.description_8,
+            total_duration:data.total_duration,
+            steps_1:data.steps_1,
+            steps_2:data.steps_2,
+            steps_3:data.steps_3,
+            steps_4:data.steps_4,
+            steps_5:data.steps_5,
+            steps_6:data.steps_6,
+            steps_7:data.steps_7,
+            steps_8:data.steps_8,
+            steps_9:data.steps_9,
+            saved_as:data.saved_as,
+            star_rating:data.star_rating       
+           },{headers})  
+           console.log(result)
          console.log(data)
          console.log(data.intro_photo)
           } catch(error){
