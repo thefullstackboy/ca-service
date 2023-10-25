@@ -3,6 +3,9 @@ import GradeIcon from '@mui/icons-material/Grade';
 import "../Home/Home2.css"
 
 function Home2() {
+  let showInterst =()=>{
+    alert("Show Interset")
+  } 
   return (
 <div className='maincontainer'>
 <div className="container"> 
@@ -15,6 +18,7 @@ function Home2() {
         <p className="card-text text-white">Some quick example text to build on the cardabc's content.</p>
       </div>
       <div className="cta-section">
+        <div className='text-white btn' onClick={showInterst}><button type="button" class="btn btn-light">Show Interst</button></div>
         <div className='text-white'>₹129.00</div>
         <span  className="btn"><GradeIcon className='fs-6 text-white'/>
         <GradeIcon className='fs-6 text-white'/> <GradeIcon className='fs-6 text-white'/> <GradeIcon className='fs-6 text-white'/> <GradeIcon className='fs-6 text-white'/></span>
@@ -30,7 +34,7 @@ function Home2() {
         <p className="card-text text-white">Some quick example text to build on the cardabc's content.</p>
       </div>
       <div className="cta-section">
-        <div className='text-white'>₹129.00</div>
+        <div className='text-white'>₹129.00</div>     
         <span  className="btn"><GradeIcon className='fs-6 text-white'/>
         <GradeIcon className='fs-6 text-white'/> <GradeIcon className='fs-6 text-white'/> <GradeIcon className='fs-6 text-white'/> <GradeIcon className='fs-6 text-white'/></span>
       </div>
