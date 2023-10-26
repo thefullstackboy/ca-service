@@ -45,7 +45,9 @@ input[type=number] {
     border-radius: 21px;  
     background-color: #e43b3b;
 }
-
+.form-content:default{
+    width: 125%;
+}
 .form-content h3 {
     color: #fff;
     text-align: left;

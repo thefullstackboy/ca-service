@@ -57,37 +57,37 @@ if(data.password === data.confirmPassword){
               <div className="card-body p-5 text-center form-bg">
                 <h3 className="mb-5 text-uppercase text-white">Sign Up</h3>
                 <form  onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-outline mb-4">
+                <div className="form-outline mb-4 position-relative">
                     <input type="text"  className="form-control form-control-lg" placeholder='Name'
                       {...register("Name", { required: true})}
                     />
-                    {errors.Name && <p className='text-white text-start'>* Please type your Name.</p>}
+                    {errors.Name && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Please type your Name.</p>}
                   </div>
 
-                  <div className="form-outline mb-4">
+                  <div className="form-outline mb-4 position-relative">
                     <input type="email"  className="form-control form-control-lg" placeholder='Email'
                       {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
                     />
-                    {errors.Email && <p className='text-white text-start'>* Please check the email id.</p>}
+                    {errors.Email && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Please check the email id.</p>}
                   </div>
 
 
-                  <div className="form-outline mb-4">
+                  <div className="form-outline mb-4 position-relative">
                     <input type="password"  className="form-control form-control-lg" placeholder='Password' 
                      {...register("password",
                      {required: true,minLength:6})}  
                     />
-                      {errors.password && <p className='text-white text-start'>* Password must be at least 6 characters</p>}
+                      {errors.password && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Password must be at least 6 characters</p>}
                   </div>
-                  <div className="form-outline mb-4">
+                  <div className="form-outline mb-4 position-relative">
                     <input type="password"  className="form-control form-control-lg" placeholder='Confirm Password' 
                      {...register("confirmPassword",
                      {required: true,minLength:6})} 
                     />
-                     {errors.confirmPassword && <p className='text-white text-start'>* Password must be at least 6 characters</p>}  
+                     {errors.confirmPassword && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Password must be at least 6 characters</p>}  
                   </div>
 
-                  <div className="form-outline mb-4">
+                  <div className="form-outline mb-4 position-relative">
                     <label className="checkboxcontainer text-white fs-5">CA
                       <input type="checkbox" 
                       {...register("ifCa", {})}
@@ -100,7 +100,7 @@ if(data.password === data.confirmPassword){
                 </form>
               </div>
               <Link to={CONSTANTS.URL.SIGN_IN} className='nav-link'>
-                <p className='text-center fs-4 mt-3'>Already have the password please login</p>
+                <p className='text-center fs-4 position-relative mt-3'>Already have the password please login</p>
               </Link>
             </div>
           </div>

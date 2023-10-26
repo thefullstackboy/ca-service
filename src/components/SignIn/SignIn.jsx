@@ -42,19 +42,19 @@ function SignIn() {
               <div className="card-body p-5 text-center form-bg">
                 <h3 className="mb-5 text-uppercase text-white">Sign in</h3>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                  <div className="form-outline mb-4">
+                  <div className="form-outline  position-relative mb-4">
                     <input type="email" className="form-control form-control-lg" placeholder='Email'
                       {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
                     />
-                    {errors.Email && <p className='text-white text-start'>* Please check the email id.</p>}
+                    {errors.Email && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Please check the email id.</p>}
                   </div>
 
-                  <div className="form-outline mb-4">
+                  <div className="form-outline position-relative mb-4">
                     <input type="password"  className="form-control form-control-lg" placeholder='Password'
                       {...register("password",
                         { required: true })}
                     />
-                    {errors.password && <p className='text-white text-start'>* This field may not be blank.</p>}
+                    {errors.password && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* This field may not be blank.</p>}
                   </div>
                   <button type="submit" className="btn btn-light btn-lg">Sign in</button>
                   <ToastContainer />
