@@ -88,7 +88,7 @@ if(data.password === data.confirmPassword){
                   </div>
 
                   <div className="form-outline mb-4 position-relative">
-                    <label className="checkboxcontainer text-white fs-5">CA
+                    <label className="checkboxcontainer text-white fs-5 mt-5">CA
                       <input type="checkbox" 
                       {...register("ifCa", {})}
                       />
