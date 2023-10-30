@@ -5,77 +5,84 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+let bodyFormData = new FormData();
+// bodyFormData.append('image', imageFile); 
 
 export default function CreateService() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = (data) => {    
-        try {
-            console.log("fromData%%%%%%%%%%%%",data)
-          
+    const onSubmit = (data) => {  
+            console.log("fromData%%%%%%%%%%%%",data)          
             let token = localStorage.getItem('access');  
-            console.log("token###########",token)   
-          const headers ={
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-                } 
-                console.log(headers)          
+            console.log("token###########",token)
+         
+                let newObj = {
+                    short_title:data.short_title,
+                    subtitle:data.subtitle,
+                    intro_photo:data.intro_photo,
+                    price:data.price,
+                    intro_video:data.intro_video,
+                    title:data.title,
+                    service_required_for:data.service_required_for,
+                    description_1:data.description_1,
+                    description_2:data.description_2,
+                    description_3:data.description_3,
+                    description_4:data.description_4,
+                    description_5:data.description_5,
+                    description_6:data.description_6,
+                    description_7:data.description_7,
+                    description_8:data.description_8,
+                    service_include_1:data.description_1,
+                    service_include_2:data.description_2,
+                    service_include_3:data.description_3,
+                    service_include_4:data.description_4,
+                    service_include_5:data.description_5,
+                    service_include_6:data.description_6,
+                    service_include_7:data.description_7,
+                    service_include_8:data.description_8,
+                    document_required_1:data.description_1,
+                    document_required_2:data.description_2,
+                    document_required_3:data.description_3,
+                    document_required_4:data.description_4,
+                    document_required_5:data.description_5,
+                    document_required_6:data.description_6,
+                    document_required_7:data.description_7,
+                    document_required_8:data.description_8,
+                    total_duration:data.total_duration,
+                    steps_1:data.steps_1,
+                    steps_2:data.steps_2,
+                    steps_3:data.steps_3,
+                    steps_4:data.steps_4,
+                    steps_5:data.steps_5,
+                    steps_6:data.steps_6,
+                    steps_7:data.steps_7,
+                    steps_8:data.steps_8,
+                    steps_9:data.steps_9,
+                    saved_as:data.saved_as,
+                    star_rating:data.star_rating  
+                }
+                bodyFormData.append(newObj)
+                axios({
+                    method: "post",
+                    url: CONSTANTS.APIURL.SERVICE_CREATE,
+                    data: bodyFormData,
+                    headers: { "Content-Type": "multipart/form-data",
+                    "Authorization" : `Bearer ${token}`
+                },
+                  })
+                    .then(function (response) {
+                      //handle success
+                      console.log(response);
+                    })
+                    .catch(function (response) {
+                      //handle error
+                      console.log(response);
+                    });
+
                 
-            axios.post(CONSTANTS.APIURL.SERVICE_CREATE,                
-        {
-            short_title:data.short_title,
-            subtitle:data.subtitle,
-            intro_photo:data.intro_photo,
-            price:data.price,
-            intro_video:data.intro_video,
-            title:data.title,
-            service_required_for:data.service_required_for,
-            description_1:data.description_1,
-            description_2:data.description_2,
-            description_3:data.description_3,
-            description_4:data.description_4,
-            description_5:data.description_5,
-            description_6:data.description_6,
-            description_7:data.description_7,
-            description_8:data.description_8,
-            service_include_1:data.description_1,
-            service_include_2:data.description_2,
-            service_include_3:data.description_3,
-            service_include_4:data.description_4,
-            service_include_5:data.description_5,
-            service_include_6:data.description_6,
-            service_include_7:data.description_7,
-            service_include_8:data.description_8,
-            document_required_1:data.description_1,
-            document_required_2:data.description_2,
-            document_required_3:data.description_3,
-            document_required_4:data.description_4,
-            document_required_5:data.description_5,
-            document_required_6:data.description_6,
-            document_required_7:data.description_7,
-            document_required_8:data.description_8,
-            total_duration:data.total_duration,
-            steps_1:data.steps_1,
-            steps_2:data.steps_2,
-            steps_3:data.steps_3,
-            steps_4:data.steps_4,
-            steps_5:data.steps_5,
-            steps_6:data.steps_6,
-            steps_7:data.steps_7,
-            steps_8:data.steps_8,
-            steps_9:data.steps_9,
-            saved_as:data.saved_as,
-            star_rating:data.star_rating,            
-           },{"headers":headers}).then((response)=>{
-               console.log(response)
-            })}
-             catch(error){           
-             toast.error("Login requreid",{
-                position: toast.POSITION.TOP_CENTER,
-                className: 'mt-5'
-              })
-          }
+                
+           
+          
     }       
     return (
         <div className='csoverflow'>
@@ -99,8 +106,8 @@ export default function CreateService() {
                                         />
                                         {errors.subtitle && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Please type your subtitle.</p>}
                                     </div>
-
-                                    {/* <div className="col-md-12">
+{/* 
+                                    <div className="col-md-12">
                                         <label className="upload w-100 btn btn-dark btn-lg mt-3 bg-white text-dark">
                                             <input type="file" id="typeEmailX-2" className="form-control form-control-lg" 
                                             required
