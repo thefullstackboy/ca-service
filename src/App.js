@@ -8,6 +8,7 @@ import Home2 from "./components/Home/Home2";
 import DetailsPage from "./components/DetailsPage/DetailsPage";
 import CONSTANTS from "./main"
 import CreateService from "./components/CreateService/CreateService";
+import TestStar from "./components/Navbar/TestStar";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
     <Route path={CONSTANTS.URL.HOME} element={<Home2/>}/>  
     <Route path={CONSTANTS.URL.DETAILS_PAGE} element={<DetailsPage/>}/>   
     <Route path={CONSTANTS.URL.CREATE_SERVICE} element={<CreateService/>}/>
+    <Route path="/teststar" element={<TestStar/>}/>
     </Routes>
     </BrowserRouter> 
 
