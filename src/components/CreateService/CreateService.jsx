@@ -452,85 +452,372 @@
 //     )
 // }
 
+import ReactStars from "react-rating-stars-component";
 import React from 'react'
 import "../CreateService/CreateService.css"
 
 function CreateService() {
-  return (
-    <>
-        <div className="container my-3">
-    <h4 className="mt32 text-center">Create Service</h4>
 
-    <form className="mt32" action="#">
-        <div className="form-group row mt-3">
-            <label for="fname" className="control-label col-sm-2">Title</label>
-            <div className="col-sm-7">
-              <input type="text" className="form-control" id="fname"     />
-            </div>
-        </div>
-        <div className="form-group row mt-3">
-            <label for="lname" className="control-label col-sm-2">Subtitle</label>
-            <div className="col-sm-7">
-              <input type="text" className="form-control" id="lname"     />
-            </div>
-        </div>
-        <div className="form-group row mt-3">
-            <label for="email" className="control-label col-sm-2">Short title</label>
-            <div className="col-sm-7">
-             <input type="email" className="form-control" id="email"     />
-            </div>
-        </div>
-        <div className="form-group row mt-3">
-            <label for="email" className="control-label col-sm-2">Price</label>
-            <div className="col-sm-7">
-             <input type="email" className="form-control" id="email"     />
-            </div>
-        </div>
+    const thirdExample = {
+    size: 40,
+    count: 5,
+    isHalf: false,
+    value: 5,
+    color: "white",
+    activeColor: "yellow",
+    onChange: newValue => {
+        console.log(`Example 3: new value is ${newValue}`);
+    }
+};
 
-        <div className="form-group row mt-3">
-            <label for="email" className="control-label col-sm-2">Business type</label>
-            <div className="col-sm-7">
-             <input type="radio"  id="email"     /><label >Salaried</label>
-             <span className='col-sm-7 mlr'>
-             <input type="radio"  id="email"     /><label >Self Employed</label>
-             </span>
-            </div>
-        </div>
-        <div className="form-group row mt-3">
-            <label for="email" className="control-label col-sm-2">Intro photo</label>
-            <div className="col-sm-7">
-             <input type="file" className="form-control" id="email"     />
-            </div>
-        </div>
+    return (
+        <>
+            <div className="container my-3">
+                <h4 className="mt32 text-center">Create Service</h4>
 
-        <div className="form-group row mt-3">
-            <label for="email" className="control-label col-sm-2">Intro video</label>
-            <div className="col-sm-7">
-             <input type="file" className="form-control" id="email"     />
-            </div>
-        </div>
+                <form className="mt32" action="#">
+                    <div className="form-group row mt-3">
+                        <label for="fname" className="control-label col-sm-2">Title</label>
+                        <div className="col-sm-7">
+                            <input type="text" className="form-control" id="fname" />
+                        </div>
+                    </div>
+                    <div className="form-group row mt-3">
+                        <label for="lname" className="control-label col-sm-2">Subtitle</label>
+                        <div className="col-sm-7">
+                            <input type="text" className="form-control" id="lname" />
+                        </div>
+                    </div>
+                    <div className="form-group row mt-3">
+                        <label for="email" className="control-label col-sm-2">Short title</label>
+                        <div className="col-sm-7">
+                            <input type="email" className="form-control" id="email" />
+                        </div>
+                    </div>
+                    <div className="form-group row mt-3">
+                        <label for="email" className="control-label col-sm-2">Price</label>
+                        <div className="col-sm-7">
+                            <input type="email" className="form-control" id="email" />
+                        </div>
+                    </div>
 
-        {/* <div className="form-group row">
+                    <div className="form-group row mt-3">
+                        <label for="email" className="control-label col-sm-2">Business type</label>
+                        <div className="col-sm-7">
+                            <input type="radio" id="email" /><label >Salaried</label>
+                            <span className='col-sm-7 mlr'>
+                                <input type="radio" id="email" /><label >Self Employed</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="form-group row mt-3">
+                        <label for="email" className="control-label col-sm-2">Intro photo</label>
+                        <div className="col-sm-7">
+                            <input type="file" className="form-control" id="email" />
+                        </div>
+                    </div>
+
+                    <div className="form-group row mt-3">
+                        <label for="email" className="control-label col-sm-2">Intro video</label>
+                        <div className="col-sm-7">
+                            <input type="file" className="form-control" id="email" />
+                        </div>
+                    </div>
+
+                    {/* <div className="form-group row">
             <div className="offset-sm-2 col-sm-10 pull-right">
                 <button type="submit" className="btn btn-primary">Sign up</button>
             </div>
         </div> */}
-       <hr></hr>
+                    <hr></hr>
 
-       <h4 className="mt32 text-center">Description</h4>
-       <div className="form-group row mt-3">
-            <label for="email" className="control-label col-sm-2">Description main</label>
-            <div className="col-sm-7">
-             <textarea  className="form-control" id="email"  resize="none"   rows="5"/>
+                    <h4 className="mt32 text-center">Description</h4>
+                    <div className="form-group row mt-3">
+                        <label for="email" className="control-label col-sm-2">Description main</label>
+                        <div className="col-sm-7">
+                            <textarea className="form-control" id="email" resize="none" rows="5" />
+                        </div>
+                    </div>
+                    <div className="form-group row mt-3">
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Description 1</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Description 2</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Description 3</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Description 4</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Description 5</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Description 6</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Description 7</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Description 8</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                     
+                    </div>
+
+                    <hr></hr>                    
+                    <h4 className="mt32 text-center">Services Include</h4>                   
+                    <div className="form-group row mt-3">
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Service 1</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Service 2</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Service 3</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Service 4</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Service 5</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Service 6</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Service 7</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Service 8</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr></hr>                    
+                    <h4 className="mt32 text-center">Documents Required</h4>                   
+                    <div className="form-group row mt-3">
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Document 1</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Document 2</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Document 3</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Document 4</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Document 5</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Document 6</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Document 7</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Document 8</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr></hr>                    
+                    <h4 className="mt32 text-center">Steps Include</h4>                   
+                    <div className="form-group row mt-3">
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Step 1</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Step 2</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Step 3</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Step 4</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Step 5</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Step 6</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Step 7</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Step 8</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+                    </div>
+<hr></hr>
+
+<div className="form-group row mt-3">
+                        <label for="email" className="control-label col-sm-2">Save As</label>
+                        <div className="col-sm-6">
+                            <input type="radio" id="email" /><label >Publish</label>
+                            <span className='col-sm-6 mlr'>
+                                <input type="radio" id="email" /><label >Draft</label>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="form-group row mt-3">
+                        <label for="email" className="control-label col-sm-2 mt-3">Star Rating</label>
+                        <div className="col-sm-6">
+                        <ReactStars {...thirdExample} />
+                        </div>
+                    </div>
+
+
+                </form>
             </div>
-        </div>
-
-       
-        
-    </form>
-</div>
-    </>
-  )
+        </>
+    )
 }
 
 export default CreateService
