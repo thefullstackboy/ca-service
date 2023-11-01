@@ -459,66 +459,66 @@ import "../CreateService/CreateService.css"
 function CreateService() {
 
     const thirdExample = {
-    size: 40,
-    count: 5,
-    isHalf: false,
-    value: 5,
-    color: "white",
-    activeColor: "yellow",
-    onChange: newValue => {
-        console.log(`Example 3: new value is ${newValue}`);
-    }
-};
+        size: 40,
+        count: 5,
+        isHalf: true,
+        value: 5,
+        color: "white",
+        activeColor: "yellow",
+        onChange: newValue => {
+            console.log(`Example 3: new value is ${newValue}`);
+        }
+    };
 
     return (
         <>
-            <div className="container my-3">
-                <h4 className="mt32 text-center">Create Service</h4>
+            <div className="container creatform my-3">
+                <h4 className="mt32 text-center text-white">Create Service</h4>
 
                 <form className="mt32" action="#">
                     <div className="form-group row mt-3">
-                        <label for="fname" className="control-label col-sm-2">Title</label>
+                        <label for="fname" className="control-label col-sm-2 text-white">Title</label>
                         <div className="col-sm-7">
                             <input type="text" className="form-control" id="fname" />
                         </div>
                     </div>
                     <div className="form-group row mt-3">
-                        <label for="lname" className="control-label col-sm-2">Subtitle</label>
+                        <label for="lname" className="control-label col-sm-2 text-white">Subtitle</label>
                         <div className="col-sm-7">
                             <input type="text" className="form-control" id="lname" />
                         </div>
                     </div>
                     <div className="form-group row mt-3">
-                        <label for="email" className="control-label col-sm-2">Short title</label>
+                        <label for="email" className="control-label col-sm-2 text-white">Short title</label>
                         <div className="col-sm-7">
                             <input type="email" className="form-control" id="email" />
                         </div>
                     </div>
                     <div className="form-group row mt-3">
-                        <label for="email" className="control-label col-sm-2">Price</label>
+                        <label for="email" className="control-label col-sm-2 text-white">Price</label>
                         <div className="col-sm-7">
                             <input type="email" className="form-control" id="email" />
                         </div>
                     </div>
 
                     <div className="form-group row mt-3">
-                        <label for="email" className="control-label col-sm-2">Business type</label>
+                        <label for="email" className="control-label col-sm-2 text-white">Business type</label>
                         <div className="col-sm-7">
-                            <input type="radio" id="email" /><label >Salaried</label>
+                            <input type="radio" id="email" /><label className="text-white">Salaried</label>
                             <span className='col-sm-7 mlr'>
-                                <input type="radio" id="email" /><label >Self Employed</label>
+                                <input type="radio" id="email" /><label className="text-white">Self Employed</label>
                             </span>
                         </div>
                     </div>
                     <div className="form-group row mt-3">
-                        <label for="email" className="control-label col-sm-2">Intro photo</label>
+                        <label for="email" className="control-label col-sm-2 text-white">Intro photo</label>
                         <div className="col-sm-7">
                             <input type="file" className="form-control" id="email" />
                         </div>
                     </div>
 
                     <div className="form-group row mt-3">
-                        <label for="email" className="control-label col-sm-2">Intro video</label>
+                        <label for="email" className="control-label col-sm-2 text-white">Intro video</label>
                         <div className="col-sm-7">
                             <input type="file" className="form-control" id="email" />
                         </div>
@@ -531,23 +531,23 @@ function CreateService() {
         </div> */}
                     <hr></hr>
 
-                    <h4 className="mt32 text-center">Description</h4>
+                    <h4 className="mt32 text-center text-white">Description</h4>
                     <div className="form-group row mt-3">
-                        <label for="email" className="control-label col-sm-2">Description main</label>
+                        <label for="email" className="control-label col-sm-2 text-white">Description main</label>
                         <div className="col-sm-7">
                             <textarea className="form-control" id="email" resize="none" rows="5" />
                         </div>
                     </div>
-                    <div className="form-group row mt-3">
+                    <div className="form-group row mt-3 ">
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Description 1</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Description 1</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Description 2</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Description 2</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
@@ -556,28 +556,13 @@ function CreateService() {
 
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Description 3</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Description 3</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Description 4</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Description 5</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Description 6</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Description 4</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
@@ -586,49 +571,49 @@ function CreateService() {
 
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Description 7</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Description 5</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Description 8</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Description 6</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                         </div>
 
-                     
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Description 7</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Description 8</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+
                     </div>
 
-                    <hr></hr>                    
-                    <h4 className="mt32 text-center">Services Include</h4>                   
+                    <hr></hr>
+                    <h4 className="mt32 text-center text-white">Services Include</h4>
                     <div className="form-group row mt-3">
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Service 1</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Service 1</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Service 2</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Service 3</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Service 4</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Service 2</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
@@ -637,48 +622,13 @@ function CreateService() {
 
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Service 5</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Service 3</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Service 6</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Service 7</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Service 8</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <hr></hr>                    
-                    <h4 className="mt32 text-center">Documents Required</h4>                   
-                    <div className="form-group row mt-3">
-                        <div class="row g-3">
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Document 1</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Document 2</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Service 4</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
@@ -687,28 +637,13 @@ function CreateService() {
 
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Document 3</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Service 5</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Document 4</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Document 5</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Document 6</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Service 6</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
@@ -717,13 +652,13 @@ function CreateService() {
 
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Document 7</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Service 7</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Document 8</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Service 8</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
@@ -731,33 +666,19 @@ function CreateService() {
                         </div>
                     </div>
 
-                    <hr></hr>                    
-                    <h4 className="mt32 text-center">Steps Include</h4>                   
+
+                    <hr></hr>
+                    <h4 className="mt32 text-center text-white">Documents Required</h4>
                     <div className="form-group row mt-3">
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Step 1</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Document 1</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Step 2</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Step 3</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-                            </div>
-                            <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Step 4</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Document 2</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
@@ -766,13 +687,13 @@ function CreateService() {
 
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Step 5</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Document 3</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Step 6</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Document 4</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
@@ -781,36 +702,119 @@ function CreateService() {
 
                         <div class="row g-3">
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Step 7</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Document 5</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                             <div class="col-auto">
-                                <label for="inputPassword6" class="col-form-label">Step 8</label>
+                                <label for="inputPassword6" class="col-form-label text-white">Document 6</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Document 7</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Document 8</label>
                             </div>
                             <div class="col-auto">
                                 <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
                             </div>
                         </div>
                     </div>
-<hr></hr>
 
-<div className="form-group row mt-3">
-                        <label for="email" className="control-label col-sm-2">Save As</label>
+                    <hr></hr>
+                    <h4 className="mt32 text-center text-white">Steps Include</h4>
+                    <div className="form-group row mt-3">
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Step 1</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Step 2</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Step 3</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Step 4</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Step 5</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Step 6</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Step 7</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label text-white">Step 8</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+                            </div>
+                        </div>
+                    </div>
+                    <hr></hr>
+
+                    <div className="form-group row mt-3">
+                        <label for="email" className="control-label col-sm-2 text-white">Save As</label>
                         <div className="col-sm-6">
-                            <input type="radio" id="email" /><label >Publish</label>
+                            <input type="radio" id="email" /><label className="text-white">Publish</label>
                             <span className='col-sm-6 mlr'>
-                                <input type="radio" id="email" /><label >Draft</label>
+                                <input type="radio" id="email" /><label className="text-white">Draft</label>
                             </span>
                         </div>
                     </div>
 
                     <div className="form-group row mt-3">
-                        <label for="email" className="control-label col-sm-2 mt-3">Star Rating</label>
+                        <label for="email" className="control-label col-sm-2 mt-3 text-white">Star Rating</label>
                         <div className="col-sm-6">
-                        <ReactStars {...thirdExample} />
+                            <ReactStars {...thirdExample} />
                         </div>
+                    </div>
+
+                    <div className="form-button mt-4 text-center">
+                        <button id="submit" type="submit" className="btn btn-light btn-lg">Create</button>
                     </div>
 
 
