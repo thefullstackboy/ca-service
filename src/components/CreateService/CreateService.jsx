@@ -453,11 +453,14 @@
 // }
 
 import ReactStars from "react-rating-stars-component";
-import React from 'react'
-import "../CreateService/CreateService.css"
+import React from 'react';
+import { useForm, Controller } from "react-hook-form";
+
+import "../CreateService/CreateService.css";
+
 
 function CreateService() {
-
+    const { register, handleSubmit, control, formState: { errors } } = useForm();
     const thirdExample = {
         size: 40,
         count: 5,
@@ -469,20 +472,108 @@ function CreateService() {
             console.log(`Example 3: new value is ${newValue}`);
         }
     };
+    const onSubmit = (data) => {
+        let bodyFormData = new FormData();
 
+
+        console.log("fromData%%%%%%%%%%%%", data)
+        console.log("%%%%%%%", data.image)
+    }
     return (
         <>
             <div className="container creatform my-3">
                 <h4 className="mt32 text-center text-white">Create Service</h4>
 
-                <form className="mt32" action="#">
-                    <div className="form-group row mt-3">
-                        <label for="fname" className="control-label col-sm-2 text-white">Title</label>
-                        <div className="col-sm-7">
-                            <input type="text" className="form-control" id="fname" />
+                <form className="mt32" action="#" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="form-group row mt-2">
+                        <label className="control-label col-sm-2 text-white fs-7 fw-bold">Title</label>
+                        <div className="col-sm-7 position-relative">
+                            <input type="text" className="form-control"
+                                {...register("title", { required: true })}
+                            />
+                            {errors.title && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Please type title</p>}
                         </div>
                     </div>
+
+                    <div className="form-group row mt-5">
+                        <label className="control-label col-sm-2 text-white fs-7 fw-bold">Subtitle</label>
+                        <div className="col-sm-7 position-relative">
+                            <input type="text" className="form-control"
+                                {...register("subtitle", { required: true })}
+                            />
+                            {errors.subtitle && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Please type subtitle</p>}
+                        </div>
+                    </div>
+
+                    <div className="form-group row mt-5">
+                        <label className="control-label col-sm-2 text-white fw-bold  text-nowrap">Short title</label>
+                        <div className="col-sm-7 position-relative">
+                            <input type="text" className="form-control"
+                                {...register("short_title", { required: true })}
+                            />
+                            {errors.short_title && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Please type short title</p>}
+                        </div>
+                    </div>
+
+                    <div className="form-group row mt-5">
+                        <label className="control-label col-sm-2 text-white fw-bold  text-nowrap">price</label>
+                        <div className="col-sm-7 position-relative">
+                            <input type="number" className="form-control"
+                                {...register("price", { required: true, min: 1 })}
+                            />
+                            {errors.price && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>* Please type price</p>}
+                        </div>
+                    </div>
+
                     <div className="form-group row mt-3">
+                        <label className="control-label col-sm-2 text-white fw-bold  text-nowrap">Business type</label>
+                        <div className="col-sm-9 mlr">
+                            <input type="radio" value="For Salaried" checked {...register("service_required_for", { required: false })} /><label className="text-white">Salaried</label>
+                            <span className='col-sm-9 mlr'>
+                                <input type="radio"  {...register("service_required_for", { required: false })} value="Self own business" /><label className="text-white">Self Employed</label>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="form-group row mt-3">
+                        <label className="control-label col-sm-2 text-white fw-bold  text-nowrap">Intro photo</label>
+                        <div className="col-sm-7 position-relative">                    
+                            <Controller
+                                className="form-control"
+                                name="image"
+                                control={control}
+                                rules={{
+                                    required: "* Please select an image file.",
+                                    validate: {
+                                        isImage: (value) => {
+                                            if (value[0]) {
+                                                const acceptedFormats = ["image/jpeg", "image/png", "image/gif"];
+                                                if (acceptedFormats.includes(value[0].type)) {
+                                                    return true;
+                                                }
+                                                return "Invalid file format. Supported formats: JPEG, PNG, GIF";
+                                            }
+                                            return true;
+                                        },
+                                    },
+                                }}
+                                render={({ field }) => (
+                                    <>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            onChange={(e) => {
+                                                field.onChange(e.target.files);
+                                            }}
+                                        />
+                                        {errors.image && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>{errors.image.message}</p>}
+                                    </>
+                                )}
+                            />
+                        </div>
+                    </div>
+
+                    {/* <div className="form-group row mt-3">
                         <label for="lname" className="control-label col-sm-2 text-white">Subtitle</label>
                         <div className="col-sm-7">
                             <input type="text" className="form-control" id="lname" />
@@ -529,7 +620,7 @@ function CreateService() {
                 <button type="submit" className="btn btn-primary">Sign up</button>
             </div>
         </div> */}
-                    <hr></hr>
+                    {/* <hr className="text-white"></hr>
 
                     <h4 className="mt32 text-center text-white">Description</h4>
                     <div className="form-group row mt-3">
@@ -602,7 +693,7 @@ function CreateService() {
 
                     </div>
 
-                    <hr></hr>
+                    <hr className="text-white"></hr>
                     <h4 className="mt32 text-center text-white">Services Include</h4>
                     <div className="form-group row mt-3">
                         <div class="row g-3">
@@ -667,7 +758,7 @@ function CreateService() {
                     </div>
 
 
-                    <hr></hr>
+                    <hr className="text-white"></hr>
                     <h4 className="mt32 text-center text-white">Documents Required</h4>
                     <div className="form-group row mt-3">
                         <div class="row g-3">
@@ -731,7 +822,7 @@ function CreateService() {
                         </div>
                     </div>
 
-                    <hr></hr>
+                    <hr className="text-white"></hr>
                     <h4 className="mt32 text-center text-white">Steps Include</h4>
                     <div className="form-group row mt-3">
                         <div class="row g-3">
@@ -794,7 +885,7 @@ function CreateService() {
                             </div>
                         </div>
                     </div>
-                    <hr></hr>
+                     <hr className="text-white"></hr>
 
                     <div className="form-group row mt-3">
                         <label for="email" className="control-label col-sm-2 text-white">Save As</label>
@@ -804,14 +895,14 @@ function CreateService() {
                                 <input type="radio" id="email" /><label className="text-white">Draft</label>
                             </span>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className="form-group row mt-3">
+                    {/* <div className="form-group row mt-3">
                         <label for="email" className="control-label col-sm-2 mt-3 text-white">Star Rating</label>
                         <div className="col-sm-6">
                             <ReactStars {...thirdExample} />
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="form-button mt-4 text-center">
                         <button id="submit" type="submit" className="btn btn-light btn-lg">Create</button>
