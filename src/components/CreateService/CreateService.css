@@ -199,3 +199,10 @@ textarea {
     display: flex;
 }
 
+.deswidth {
+    width: 127%;
+}
+
+.textml {
+    margin-left: 6%;
+}
