@@ -573,6 +573,44 @@ function CreateService() {
                         </div>
                     </div>
 
+                    <div className="form-group row mt-3">
+                        <label className="control-label col-sm-2 text-white fw-bold  text-nowrap">Intro video</label>
+                        <div className="col-sm-7 position-relative">                    
+                            <Controller
+                                className="form-control"
+                                name="video"
+                                control={control}
+                                rules={{
+                                    required: "* Please select an video file.",
+                                    validate: {
+                                        isImage: (value) => {
+                                            if (value[0]) {
+                                                const acceptedFormats = ["video/mp4"];
+                                                if (acceptedFormats.includes(value[0].type)) {
+                                                    return true;
+                                                }
+                                                return "Invalid file format. Supported formats: mp4";
+                                            }
+                                            return true;
+                                        },
+                                    },
+                                }}
+                                render={({ field }) => (
+                                    <>
+                                        <input
+                                            type="file"
+                                            accept="video/*"
+                                            onChange={(e) => {
+                                                field.onChange(e.target.files);
+                                            }}
+                                        />
+                                        {errors.video && <p className='text-start text-white text-wrap position-absolute bottom-1 start-0'>{errors.video.message}</p>}
+                                    </>
+                                )}
+                            />
+                        </div>
+                    </div>
+
                     {/* <div className="form-group row mt-3">
                         <label for="lname" className="control-label col-sm-2 text-white">Subtitle</label>
                         <div className="col-sm-7">
