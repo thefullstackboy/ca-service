@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import CONSTANTS from "../../main";
 import GradeIcon from '@mui/icons-material/Grade';
 import "../Home/Home2.css"
 
 function Home2() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const token = localStorage.getItem('access');
+    console.log(token)
+const headers = {
+'Authorization': `Bearer ${token}`,
+'Content-Type': 'application/json',
+};
+  axios.get(`${CONSTANTS.APIURL.SERVICE_LIST}`,{headers})
+      .then(response => {
+        console.log("$$$$$$$$$$$api data",data)
+        setData(response.data);          
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, [data]);
+
+
   let showInterst =()=>{
     alert("Show Interset")
   } 
