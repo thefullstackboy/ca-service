@@ -16,7 +16,9 @@ const headers = {
 };
   axios.get(`${CONSTANTS.APIURL.SERVICE_LIST}`,{headers})
       .then(response => {
-        console.log("$$$$$$$$$$$api data",data)
+         Object.values(data)
+        
+        
         setData(response.data);          
       })
       .catch(error => {
@@ -35,6 +37,15 @@ const headers = {
     <img src="https://codingyaar.com/wp-content/uploads/chair-image.jpg" className="cardabc-img-top" alt="..."/>
     <div className="cardabc-body">
       <div className="text-section">
+        {
+           Object.values(data).map((index)=>{
+            return (
+              <>
+              <p>{console.log("All data",index)}</p>
+              </>
+            )
+          })
+        }
         <h4 className="card-title fw-bold text-white">Card title</h4>
         <h6 className="card-title fw-bold text-white">Card title</h6>
         <p className="card-text text-white">Some quick example text to build on the cardabc's content.</p>
