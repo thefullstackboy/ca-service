@@ -8,24 +8,24 @@ function Home2() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const token = localStorage.getItem('access');
-    console.log(token)
-const headers = {
-'Authorization': `Bearer ${token}`,
-'Content-Type': 'application/json',
-};
-  axios.get(`${CONSTANTS.APIURL.SERVICE_LIST}`,{headers})
-      .then(response => {
-         Object.values(data)
-        
-        
-        setData(response.data);          
-      })
-      .catch(error => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem('access');
+        console.log(token)
+        const headers = {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        };
+  
+        const response = await axios.get(`${CONSTANTS.APIURL.SERVICE_LIST}`, { headers });
+        setData(response.data);
+      } catch (error) {
         console.error('Error fetching data:', error);
-      });
+      }
+    };
+  
+    fetchData();
   }, [data]);
-
 
   let showInterst =()=>{
     alert("Show Interset")
@@ -41,7 +41,8 @@ const headers = {
            Object.values(data).map((index)=>{
             return (
               <>
-              <p>{console.log("All data",index)}</p>
+              {/* <p>{console.log("%%%%%",index)}</p> */}
+              {/* <p>{index.results.title}</p> */}
               </>
             )
           })
